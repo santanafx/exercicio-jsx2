@@ -1,3 +1,6 @@
+import { Botao } from "./components/Botao";
+import { Form } from "./components/Form";
+
 const luana = {
   cliente: "Luana",
   idade: 27,
@@ -60,7 +63,12 @@ const App = () => {
   const x = produtos;
   const valor = x.filter(({ preco }) => Number(preco.replace("R$ ", "")) > 1500);
 
-  console.log(valor);
+  //Criar botao
+  const clicarBotao = (event) => {
+    console.log(event);
+  };
+
+  //Criando componente e importando para App.js
 
   return (
     <>
@@ -100,6 +108,12 @@ const App = () => {
           </div>
         ))}
       </section>
+
+      <div>
+        <button onClick={clicarBotao}>Clique aqui!!!</button>
+      </div>
+
+      <Form />
     </>
   );
 };
